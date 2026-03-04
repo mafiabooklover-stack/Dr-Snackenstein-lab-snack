@@ -1,0 +1,455 @@
+/* MAD SCIENTIST'S LAB SNACKS - THEME STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #1a3f1a 0%, #0a2f0a 100%);
+    color: #b3ffb3;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Lab background effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.lab-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(10, 30, 10, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+/* Warning Sign */
+.warning-sign {
+    background: #ff0;
+    color: #d84949;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 5px dashed #000;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { background: #ff0; }
+    50% { background: #ffaa00; }
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    letter-spacing: 5px;
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #00ff00; }
+    50% { text-shadow: 0 0 30px #00ff00, 0 0 50px #00ff00; }
+}
+
+header h2 {
+    font-size: 4rem;
+    color: #ffaa00;
+    text-shadow: 3px 3px 0 #00ff00;
+    margin: 10px 0;
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.warning-tape {
+    background: repeating-linear-gradient(45deg, #ff0, #ff0 20px, #000 20px, #000 40px);
+    color: #ff0000;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+}
+
+/* Lab Rules */
+.lab-rules {
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid #00ff00;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.lab-rules h3 {
+    color: #ffaa00;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lab-rules ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.lab-rules li {
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+}
+
+/* Snacks Grid */
+.snacks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.snack-card {
+    background: rgba(20, 40, 20, 0.9);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.snack-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.5);
+    border-color: #ffaa00;
+}
+
+.snack-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.experiment-number {
+    background: #00ff00;
+    color: #000;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.snack-name {
+    font-size: 1.5rem;
+    color: #ffaa00;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.snack-image {
+    font-size: 4rem;
+    text-align: center;
+    color: #00ff00;
+    margin: 15px 0;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.snack-desc {
+    color: #fff;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.snack-ingredients {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.snack-warning {
+    background: #ff0000;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.snack-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.danger-level {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.danger-level.low {
+    background: #00ff00;
+    color: #000;
+}
+
+.danger-level.medium {
+    background: #ffaa00;
+    color: #000;
+}
+
+.danger-level.high {
+    background: #ff0000;
+    color: #fff;
+}
+
+/* Lab Notes */
+.lab-notes {
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid #00ff00;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+.lab-notes h3 {
+    color: #ffaa00;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.note {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-left: 5px solid #00ff00;
+    border-radius: 0 5px 5px 0;
+}
+
+.note-date {
+    color: #ffaa00;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Order Form */
+.order-section {
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid #00ff00;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+.order-section h3 {
+    color: #ffaa00;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00ff00;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ffaa00;
+}
+
+.order-btn {
+    grid-column: 1 / -1;
+    padding: 15px;
+    background: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s;
+}
+
+.order-btn:hover {
+    background: #ffaa00;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #ffaa00;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 3px solid #00ff00;
+}
+
+.footer-icons {
+    margin: 20px 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #00ff00;
+}
+
+.tiny {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .warning-sign {
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .warning-tape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-container {
+        padding: 15px;
+    }
+    
+    header h2 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+    
+    .snack-name {
+        font-size: 1.2rem;
+    }
+}
