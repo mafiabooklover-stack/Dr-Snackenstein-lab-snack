@@ -1050,3 +1050,33 @@ footer {
         padding: 12px;
     }
 }
+/* FIX FOR BOTTOM WARNING TEXT */
+footer .tiny {
+    font-size: 0.7rem;
+    color: #888;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+    margin: 5px 0;
+    padding: 0 10px;
+    text-align: center;
+}
+
+footer .tiny:last-child {
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Mobile fix for footer */
+@media (max-width: 600px) {
+    footer .tiny {
+        font-size: 0.6rem;
+        padding: 0 5px;
+    }
+    
+    .footer-content p {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
+}
